@@ -21,7 +21,7 @@ public class HelloController {
         PersonDetails personDetails = (PersonDetails) authentication.getPrincipal();
         System.out.println(personDetails.getPerson());
 
-        return "hello";
+        return "index.html";
     }
 
 }
