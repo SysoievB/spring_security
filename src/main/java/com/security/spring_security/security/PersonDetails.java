@@ -2,9 +2,11 @@ package com.security.spring_security.security;
 
 import com.security.spring_security.model.Person;
 import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import java.util.Collection;
+import java.util.Collections;
 
 public class PersonDetails implements UserDetails {
 
@@ -16,7 +18,9 @@ public class PersonDetails implements UserDetails {
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        return null;
+        //SHOW_ACCOUNT, WITHDRAW_MONEY, SEND_MONEY
+        //ROLE_USER, ROLE_ADMIN
+        return Collections.singletonList(new SimpleGrantedAuthority(person.getRole()));
     }
 
     @Override

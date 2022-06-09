@@ -11,7 +11,6 @@ public class HelloController {
 
     @GetMapping("/hello")
     public String sayHello() {
-
         return "index.html";
     }
 
@@ -24,4 +23,8 @@ public class HelloController {
         return "index.html";
     }
 
+    @GetMapping("/admin")
+    public String adminPage() {
+        return "admin_page";
+    }
 }
